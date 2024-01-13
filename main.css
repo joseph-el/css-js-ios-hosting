@@ -1,0 +1,243 @@
+@layer MainStyle {
+    
+    @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+    
+    :root {
+        --navbar-color: #000;
+        --task-color: #A5A5A5;
+        --number-color: #333333;
+        --operator-color: #F2A33C;
+        --background-img: url("bg_4.jpg");
+        
+    }
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    body {
+        background: var(--background-img);
+        background: url("apple.jpeg");
+    }
+}
+
+@layer NavBar {
+    
+    .nav-bar{
+        width: 100%;
+        padding: 1rem;
+        height: 5.5rem;
+        color: white;        
+        background: url("apple.jpeg");
+        display: flex;
+        justify-content: flex-start;
+        gap:1.5rem;
+        
+        /* align-content: space-between; */
+    }
+    .ios {
+        word-spacing: 1rem;
+    }
+    .apple-icon {
+        object-fit: cover;
+        max-width: 25px;
+        max-height: 25px;
+        
+    }
+    .logo {
+        letter-spacing: 2px;
+        font-family: 'Bangers', serif;
+        font-size: x-large;
+        padding-right: 40%;
+        padding-left: 10em;
+    }
+
+    .menu-items {
+        letter-spacing: 1px;
+        font-family: 'Exo';
+        margin-top: 1rem;
+    }
+    .line {
+        /* color: red; */
+        opacity: .5;
+    }
+    .menu-items:hover {
+        color: var(--operator-color);
+        cursor: pointer;
+    }
+}
+
+@layer app {
+  .app {
+    min-width: 50vmin;
+    min-height: 70vmin;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    margin-top: -35vmin;
+    margin-left: -25vmin;
+    display: flex;
+
+    /* background-color: white; */
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: url("bg_4.jpg"); */
+    /* background: white; */
+    background-size: 200%;
+    background-position: center;
+}
+
+.phone {
+    padding-top: 10px;
+    color: white;
+    width: 27rem;
+    height: 55rem;
+    border-radius: 50px;
+    /* border-color: red; */
+    border: 10px solid white;
+    background-color: rgb(0, 0, 0);
+}
+
+.iphone-nav {
+    display: flex;
+    /* padding-top: 10px; */
+    justify-content: center;
+
+}
+
+.touch-screen {
+    /* color: hsl(0, 100%, 100%); */
+    width: 10rem;
+    height: 40px;
+
+    border-bottom-right-radius: 26px;    
+    border-bottom-left-radius: 26px;
+    background-color: rgb(0, 0, 0);
+}
+
+.camera {
+    width: 40px;
+    height: 35px;
+    transform: translate(10px);
+    
+    /* border: 2px solid red; */
+}
+
+.time {
+    font-family: Helvetica Neue;
+    transform: translate(-55px, 14px);
+    font-size:1rem;
+    font-weight:400;
+
+}
+
+.battery {
+    transform: translate(50px, 10px);
+    /* color: yellow; */
+}
+
+.air {
+    transform: translate(30px, 13px);
+
+}
+
+.wifi {
+    transform: translate(40px, 13px);
+}
+
+}
+
+@layer Display {
+    .display {
+        background: rgb(0, 0, 0);
+        min-width: 15rem;
+        min-height: 20rem;
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+        justify-content: flex-end;
+        font-family: Helvetica Neue;
+        padding-right: 20px;
+    }
+    .input {
+        font-size: 20px;
+        font-weight: 300;   
+    }
+    .output {
+        font-size: 75px;
+        font-weight: 295;   
+    }
+}
+
+@layer {
+
+    .app-keys > * {
+        /* border: 1px solid red; */
+    }
+
+    .app-keys {
+        width: 100%;
+        height: 25rem;
+
+        /* background: blue; */
+        display: grid;
+       
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        gap: 10px;
+        padding-left: 15px;
+        padding-top: 1rem;
+        /* padding-right: 15px; */
+    }
+    .key {
+    
+        font-family: Helvetica Neue;
+        /* font-weight: 500; */
+        font-size:40px;
+        font-weight: 399;
+
+        width: 80px; 
+        height: 80px;
+        line-height: 80px;  
+        border-radius: 50%;
+        text-align: center;
+        /* background-color: red;  */
+    }
+    #division {
+        text-transform: uppercase;
+        /* text-align: -10px -10px; */
+        /* transform: translate(-10px, -10px); */
+    }
+    .zero {
+   
+        grid-column: 1 / 3;
+        /* border-radius: 30%; */
+
+        /* height: inherit; */
+        /* width: 80; */
+        /* width: 180px; */
+        /* width:max-content; */
+        /* grid-column: 1 / 3; */
+    }
+    
+    .number {
+        background: var(--number-color);
+    }
+
+    .operator {
+        background: var(--operator-color);
+    }
+    .task {
+        color: black;
+        background: var(--task-color);
+    }
+    .key:hover {
+        color: white;
+        opacity: 0.7;
+    }
+}
